@@ -9,7 +9,7 @@ DB = DBHelper()
 @app.route("/")
 def home():
   try:
-    data = DB.get_all_inputs()0
+    data = DB.get_all_inputs()
   except Exception as e:
     print e
     data = None
@@ -18,7 +18,7 @@ def home():
 @app.route("/add",methods=["POST"])
 def add():
   try:
-    data = request.from.get("userinput")
+    data = request.form.get("userinput")
     DB.add_input(data)
   except Exception as e:
     print e
